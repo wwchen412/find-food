@@ -3,11 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import appFood from './reducer';
 
+let store = createStore(appFood);
+// console.log(store.getState())
+
+const unsubscribe = store.subscribe(() =>
+  console.log(store.getState())
+)
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
