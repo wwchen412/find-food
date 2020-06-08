@@ -94,6 +94,7 @@ const MainPage = styled(Search)`
         &.cloud3{
             top: 10%;
             right: 10%;
+            z-index:-1;
         }
     }
    
@@ -120,6 +121,8 @@ const MainPage = styled(Search)`
         align-items:top;
         &_list{
             width:40%;
+            max-height:400px;
+            overflow-y: scroll;
         }
     }
 
