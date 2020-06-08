@@ -38,7 +38,7 @@ export default function  Map(){
     return(
        
        <GoogleMap   mapContainerStyle={mapContainerStyle}
-                    zoom={14}
+                    zoom={15}
                     center={center}
                     options={options}
                     defaultVisible={false}>

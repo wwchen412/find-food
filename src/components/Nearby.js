@@ -34,7 +34,7 @@ const Nearby = () =>{
         
         SetSpining(true);
         const places = [];
-        const url = 'https://cors-anywhere.herokuapp.com/'+'https://maps.googleapis.com/maps/api/place/nearbysearch/json?'+location+'&radius=3000&type=restaurant&keyword='+searchText+'&key='+process.env.REACT_APP_MAP_API_KEY;
+        const url = 'https://cors-anywhere.herokuapp.com/'+'https://maps.googleapis.com/maps/api/place/nearbysearch/json?'+location+'&radius=1000&type=restaurant&keyword='+searchText+'&key='+process.env.REACT_APP_MAP_API_KEY;
         
         fetch(url)
         .then(res=> res.json())
