@@ -7,6 +7,7 @@ import {
 } from '@react-google-maps/api';
 import { useSelector } from 'react-redux';
 import mapStyles from './mapStyles';
+import vector from '../img/mark.svg';
 
 const libraries = ["places"];
 const mapContainerStyle = {
@@ -42,8 +43,12 @@ export default function  Map(){
                     center={center}
                     options={options}
                     defaultVisible={false}>
-            {markers.map(marker => <Marker 
-                key={marker.placeId}
+            {markers.map(marker => 
+                <Marker 
+                        key={marker.placeId}
+                        icon={{ url: vector,
+                                scaledSize: new window.google.maps.Size(30, 30)
+                            }}
                 position={{ lat: marker.location.lat, lng:marker.location.lng}}
                 onClick={()=>setSelected(marker)}
                 
@@ -51,7 +56,7 @@ export default function  Map(){
             {selected ? (<InfoWindow    position={{lat:selected.location.lat,lng:selected.location.lng}}
                                         onCloseClick={()=>setSelected(null)}>
                     <div>
-                        <h2>{selected.placeName}</h2>
+                        <h4>{selected.placeName}</h4>
                     </div>
                 </InfoWindow>) : null}
        </GoogleMap>

@@ -2,7 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import Rating from './Rating';
 
+
 const Place = styled.div`
+
     display: inline-block;
     width: calc((100% - 2rem) /2);
     border: 1px solid #eee;
@@ -12,6 +14,10 @@ const Place = styled.div`
     margin-bottom: 1rem;
     box-sizing: border-box;
     background:#fff;
+    @media (max-width: 575px) {
+      width: calc(100% - 1rem);
+      margin:0 auto 1rem;
+    }
   h3{
     text-overflow : ellipsis;
     white-space : nowrap;
@@ -60,7 +66,7 @@ const PlaceList = (props)=> {
     return(
         <Place key={props.placeId}>
             <h3>{props.placeName}</h3>
-            <Rating rating={props.rating}></Rating>
+            <Rating rating={props.rating} key={props.placeId}></Rating>
         </Place>
     )
 }

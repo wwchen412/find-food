@@ -15,8 +15,8 @@ const Rating = (props) => {
     return (
         <>
         { starsArray && 
-            starsArray.map((star)=>(
-                <div className={"star "+star}></div>
+            starsArray.map((star,index)=>(
+                <div className={"star "+star} key={index}></div>
                 ))
         }
         </>
