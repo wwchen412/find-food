@@ -4,6 +4,7 @@ const Rating = (props) => {
     
         const stars = parseInt(Math.round(props.rating));
         const starsArray = [];
+
         for(let i = 0;i<stars;i++){
             starsArray.push('star--yellow')
         }
@@ -11,6 +12,7 @@ const Rating = (props) => {
             starsArray.push('star--empty')
         }
       
+        
     
     return (
         <>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { getRandomFood } from '../action'
 import { useSelector ,useDispatch} from 'react-redux';
@@ -12,20 +12,33 @@ const Search = ({className}) => {
     const searchText = useSelector(state => state.food);
     const dispatch = useDispatch()
     
+    const mouseMove = (evt) => {
+       
+            const transFormX = Math.floor(evt.clientX / 20);
+            const transFormY = Math.floor(evt.clientY / 20);
+            const clouds =  document.querySelectorAll('.cloudAnime');
+            clouds.forEach((e)=>{
+                e.style.transform =`translate(-${transFormX}px,-${transFormY}px)`;
+            })
+            
+    }
+    useEffect(()=>{
+        document.getElementById("sky").addEventListener('mousemove', mouseMove);
+    })
     return(
         <div className={className}>
-            <section className={className+"_wrap"}>
+            <section className={className+"_wrap"} id="sky">
                 <h1 className={className+"_title"}>佛系找食</h1>
                 <h3 className={className+"_subTitle"}>總是想不到要吃什麼嗎？<br/>
                 不如就隨緣吧！</h3>
                 <div className={className+"_sun"}></div>
-                <div className={className+"_clouds cloud1"}>
+                <div className={className+"_clouds cloud1 cloudAnime"}>
                 <img src={require('../img/cloud1.svg')} alt="" />      
                 </div>
-                <div className={className+"_clouds cloud2"}>
+                <div className={className+"_clouds cloud2 cloudAnime"}>
                 <img src={require('../img/cloud2.svg')} alt=""/>      
                 </div>
-                <div className={className+"_clouds cloud3"}>
+                <div className={className+"_clouds cloud3 cloudAnime"}>
                 <img src={require('../img/cloud3.svg')} alt=""/>      
                 </div>
             </section>
@@ -53,9 +66,9 @@ const Search = ({className}) => {
     )
    
 }
-const cloudsAnimation = keyframes`
-     0% { transform: translateX(-10%); }
-    100% { transform: translateX(0); }
+const sunAnimation = keyframes`
+     0% { box-shadow: 0 0 20px 0 #fae348; }
+    100% { box-shadow: 0 0 80px 0 #fae348;}
 `
 const MainPage = styled(Search)`
 
@@ -67,9 +80,11 @@ const MainPage = styled(Search)`
     }
     &_title{
         font-size: 3rem;
+        font-weight:100;
     }
     &_subTitle{
         font-size: 1rem;
+        font-weight:300;
     }
     &_sun{
         width: 250px;
@@ -78,10 +93,11 @@ const MainPage = styled(Search)`
         box-shadow: 0 0 80px 0 #fae348;
         margin: 50px auto 75px; 
         background-image: radial-gradient(circle at 50% 50%, #f5f3d6, #fffab8 71%);
+        animation: ${sunAnimation} 2s infinite linear alternate;
     }
     &_clouds{
         position: absolute;
-        animation: ${cloudsAnimation} 4s infinite alternate;
+      
         opacity: .8;
         &.cloud1{
             top: calc(50% + 50px);

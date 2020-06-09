@@ -82,7 +82,8 @@ const Nearby = () =>{
                     <div className="Place_result_list">
                     { listPlaces && 
                         listPlaces.map((place)=>(
-                            <PlaceList  placeName={place.placeName} 
+                            <PlaceList  placeName={place.placeName}
+                                        location={place.location} 
                                         rating={place.rating}
                                         key={place.placeId}>
                             </PlaceList>

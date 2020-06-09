@@ -5,7 +5,8 @@ import {
     Marker,
     InfoWindow
 } from '@react-google-maps/api';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
+import { setSelected }from '../action';
 import mapStyles from './mapStyles';
 import vector from '../img/mark.svg';
 
@@ -28,8 +29,8 @@ export default function  Map(){
 
     const markers = useSelector(state => state.markers);
     const center = useSelector(state => state.location);
-
-    const [selected,setSelected] = useState(null);
+    const selected = useSelector(state => state.selected);
+    const dispatch = useDispatch();
     
 
     if(loadError) return 'Error loading maps';
@@ -50,11 +51,12 @@ export default function  Map(){
                                 scaledSize: new window.google.maps.Size(30, 30)
                             }}
                 position={{ lat: marker.location.lat, lng:marker.location.lng}}
-                onClick={()=>setSelected(marker)}
+                onClick={()=>dispatch(setSelected(marker))}
                 
             />)}
+            
             {selected ? (<InfoWindow    position={{lat:selected.location.lat,lng:selected.location.lng}}
-                                        onCloseClick={()=>setSelected(null)}>
+                                        onCloseClick={()=>dispatch(setSelected(null))}>
                     <div>
                         <h4>{selected.placeName}</h4>
                     </div>

@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Rating from './Rating';
-
+import { useDispatch } from 'react-redux';
+import { setSelected }from '../action';
 
 const Place = styled.div`
 
@@ -63,8 +64,11 @@ const Place = styled.div`
   }
 `;
 const PlaceList = (props)=> {
+
+    
+  const dispatch = useDispatch();
     return(
-        <Place key={props.placeId}>
+        <Place key={props.placeId} onClick={()=>dispatch(setSelected(props))}>
             <h3>{props.placeName}</h3>
             <Rating rating={props.rating} key={props.placeId}></Rating>
         </Place>
