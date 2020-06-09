@@ -15,6 +15,6 @@ export const setMarkers = (markers) => {
 }
 
 export const setSelected = (marker) =>{
-    console.log('-------',marker)
+    
     return { type:SET_SELECTED,location:marker.location,placeName: marker.placeName}
 }

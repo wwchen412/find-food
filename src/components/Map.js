@@ -54,9 +54,8 @@ export default function  Map(){
                 onClick={()=>dispatch(setSelected(marker))}
                 
             />)}
-            
-            {selected ? (<InfoWindow    position={{lat:selected.location.lat,lng:selected.location.lng}}
-                                        onCloseClick={()=>dispatch(setSelected(null))}>
+
+            {selected ? (<InfoWindow    position={{lat:selected.location.lat,lng:selected.location.lng}}>
                     <div>
                         <h4>{selected.placeName}</h4>
                     </div>
