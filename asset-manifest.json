@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/find-food/static/css/main.364d795b.chunk.css",
-    "main.js": "/find-food/static/js/main.5f51b65c.chunk.js",
-    "main.js.map": "/find-food/static/js/main.5f51b65c.chunk.js.map",
+    "main.js": "/find-food/static/js/main.4237598e.chunk.js",
+    "main.js.map": "/find-food/static/js/main.4237598e.chunk.js.map",
     "runtime-main.js": "/find-food/static/js/runtime-main.f8f6a762.js",
     "runtime-main.js.map": "/find-food/static/js/runtime-main.f8f6a762.js.map",
     "static/js/2.690f0ca1.chunk.js": "/find-food/static/js/2.690f0ca1.chunk.js",
     "static/js/2.690f0ca1.chunk.js.map": "/find-food/static/js/2.690f0ca1.chunk.js.map",
     "index.html": "/find-food/index.html",
-    "precache-manifest.79199db90ca3c1039756ab15d63a18bf.js": "/find-food/precache-manifest.79199db90ca3c1039756ab15d63a18bf.js",
+    "precache-manifest.46913646522a860cad579be19d051779.js": "/find-food/precache-manifest.46913646522a860cad579be19d051779.js",
     "service-worker.js": "/find-food/service-worker.js",
     "static/css/main.364d795b.chunk.css.map": "/find-food/static/css/main.364d795b.chunk.css.map",
     "static/js/2.690f0ca1.chunk.js.LICENSE.txt": "/find-food/static/js/2.690f0ca1.chunk.js.LICENSE.txt",
@@ -21,6 +21,6 @@
     "static/js/runtime-main.f8f6a762.js",
     "static/js/2.690f0ca1.chunk.js",
     "static/css/main.364d795b.chunk.css",
-    "static/js/main.5f51b65c.chunk.js"
+    "static/js/main.4237598e.chunk.js"
   ]
 }
